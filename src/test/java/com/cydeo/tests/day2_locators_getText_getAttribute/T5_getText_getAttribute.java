@@ -55,7 +55,7 @@ public class T5_getText_getAttribute {
         }
 
         Thread.sleep(3000);
-        driver.close();
+        //driver.close();
 
     }
 

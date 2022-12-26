@@ -34,6 +34,7 @@ public class BasicNavigations {
 
 
         //use Selenium to nevigate back
+        driver.navigate().back();
 
         Thread.sleep(3000);
 
