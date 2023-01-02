@@ -38,6 +38,7 @@ public class T4_findElements {
             System.out.println("HREF Values: "+ each.getAttribute("href"));
         }
 
+        // ctrl + schift = yukarı / aşağı ile istediğin satırı yukarı aşağı taşıyabilirsin
 
 
 
