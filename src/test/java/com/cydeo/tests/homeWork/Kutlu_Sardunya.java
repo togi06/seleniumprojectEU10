@@ -19,19 +19,38 @@ public class Kutlu_Sardunya {
         WebElement googleSearchBox = driver.findElement(By.xpath("//input[@name='q']"));
         googleSearchBox.sendKeys("Sardunya Meze" + Keys.ENTER);
 
-        Thread.sleep(2000);
+
 
         WebElement SardunyaClick = driver.findElement(By.xpath("//h3[@class='LC20lb MBeuO DKV0Md']"));
         SardunyaClick.click();
 
-        Thread.sleep(2000);
+
 
         WebElement menü = driver.findElement(By.xpath("//a[@href='https://www.sardunyameze.com/qr\']"));
         menü.click();
 
-        Thread.sleep(2000);
-        WebElement anaYemekler = driver.findElement(By.xpath("//span[@clas='swiper-pagination-bullet']"));
+
+        WebElement anaYemekler = driver.findElement(By.xpath("//*[@id=\"post-703\"]/div/div/section/div/div/div/div/div/div/div/div[1]/div[1]/span[5]"));
         anaYemekler.click();
+
+        WebElement aliNazik= driver.findElement(By.xpath("//a[@href='https://www.sardunyameze.com/urun/alinazik/']"));
+        aliNazik.click();
+
+        WebElement sepeteEkle = driver.findElement(By.xpath("//button[@class ='single_add_to_cart_button button alt']"));
+        sepeteEkle.click();
+
+        WebElement sepetiGörüntüle = driver.findElement(By.xpath("//a[@class='button wc-forward']"));
+        sepetiGörüntüle.click();
+
+        Thread.sleep(2000);
+        driver.navigate().back();
+        driver.navigate().back();
+        driver.navigate().back();
+
+        WebElement zeytinyağlı = driver.findElement(By.xpath("//span[text()='Zeytinyağlılar']"));
+        zeytinyağlı.click();
+
+
 
     }
 }
