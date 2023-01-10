@@ -1,4 +1,4 @@
-package com.cydeo.tests.Zulfikar_Review;
+package com.cydeo.tests.Zulfikar_Review.week2;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

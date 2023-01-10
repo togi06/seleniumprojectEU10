@@ -1,0 +1,71 @@
+package com.cydeo.tests.day5_testNG_intro_dropdowns;
+
+import com.cydeo.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
+
+public class T4_SimpleDropdowns {
+
+    WebDriver driver;
+
+    @BeforeMethod
+    public void seteupMethod(){
+
+        //2. Go to https://practice.cydeo.com/dropdown
+        driver = WebDriverFactory.getDriver("chrome");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driver.get("https://practice.cydeo.com/dropdown");
+    }
+
+
+
+    @Test
+    public void simpleDropdownTest(){
+
+
+        //3. Verify “Simple dropdown” default selected value is correct
+        //Expected: “Please select an option”
+        Select simpleDropdown = new Select(driver.findElement(By.xpath("//select[@id='dropdown']")));
+        WebElement currentlySelectedOption = simpleDropdown.getFirstSelectedOption();
+
+        String actualSimpleDropdownText = currentlySelectedOption.getText();
+
+        System.out.println(actualSimpleDropdownText);
+        String expectedSimpleDropdownTExt = "Please select an option";
+        Assert.assertEquals(actualSimpleDropdownText, expectedSimpleDropdownTExt);
+
+        //4. Verify “State selection” default selected value is correct
+        //Expected: “Select a State”
+        Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
+
+        String expectedStateDropdownText = "Select a State";
+        String actualStateDropdownText = stateDropdown.getFirstSelectedOption().getText();
+
+        Assert.assertEquals(actualStateDropdownText, expectedStateDropdownText);
+
+
+        //aşağı kaymalılarda bir seçim yapacaksak bu şekilde yapıyoruz. Yer belirleme yaparken istediğin "locater"ı
+        //kullanabilirsin ör: id , xpath vs.
+        WebElement dropdownElm = driver.findElement(By.id("dropdown"));
+        Select selectObj = new Select(dropdownElm);
+         selectObj.selectByIndex(2);
+         selectObj.selectByValue("2");
+         selectObj.selectByVisibleText("Option 2");
+
+         String expectedOption = "Option 2";
+         String actualOption = selectObj.getFirstSelectedOption().getText();
+
+         Assert.assertEquals(actualOption, expectedOption);
+
+
+    }
+
+}
