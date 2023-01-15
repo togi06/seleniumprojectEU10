@@ -39,12 +39,18 @@ public class BrowserUtils {
         }
 
         //5. Assert: Title contains “Etsy”
-
         String actualTitle = driver.getTitle();
-
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
 
     }
+    /*
+    This method accepts a String "expectedTitle" and Asserts if it true
+     */
 
+    public static void verifyTitle( WebDriver driver, String expectedTitle){
+
+        Assert.assertEquals(driver.getTitle(), expectedTitle);
+
+    }
 
 }

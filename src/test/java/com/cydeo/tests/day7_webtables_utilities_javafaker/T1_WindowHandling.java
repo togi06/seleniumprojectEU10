@@ -1,13 +1,12 @@
 package com.cydeo.tests.day7_webtables_utilities_javafaker;
 
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class T1_WindowHandling {
@@ -40,21 +39,13 @@ public class T1_WindowHandling {
 
         //4. Create a logic to switch to the tab where Etsy.com is open
 
-        Set<String > allWindowsHandles = driver.getWindowHandles();
-
-        for (String each : driver.getWindowHandles()) {
-
-            driver.switchTo().window(each);
-            System.out.println("Current URL: "+ driver.getCurrentUrl());
-
-            if (driver.getCurrentUrl().contains("etsy")){
-                break;
-            }
-
-        }
+        BrowserUtils.switchWindowAndVerify(driver, "etsy", "Etsy");
 
 
-        /*WebElement cookies2 = driver.findElement(By.xpath("//button[@class='wt-btn wt-btn--filled wt-mb-xs-0']"));
+
+
+        /*
+        WebElement cookies2 = driver.findElement(By.xpath("//button[@class='wt-btn wt-btn--filled wt-mb-xs-0']"));
         cookies2.click();
 
         WebElement searchArea = driver.findElement(By.xpath("//input[@id='global-enhancements-search-query']"));
@@ -69,11 +60,7 @@ public class T1_WindowHandling {
 
        // WebElement cookies = driver.findElement(By.xpath("//div[.='Tümünü kabul et']"));
        // cookies.click();
-        //5. Assert: Title contains “Etsy”
 
-        String actualTitle = driver.getTitle();
-        String expectedInTitle = "Etsy";
-        Assert.assertTrue(actualTitle.contains(expectedInTitle));
 
        /* for (String each : driver.getWindowHandles()) {
 
