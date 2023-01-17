@@ -49,15 +49,26 @@ public class BrowserUtils {
         String actualTitle = driver.getTitle();
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
 
+
     }
     /*
-    This method accepts a String "expectedTitle" and Asserts if it true
-     */
-
-    public static void verifyTitle( WebDriver driver, String expectedTitle){
+        this method accepts a String "expectedTitle" and Asserts if it is true
+        */
+    public static void verifyTitle(WebDriver driver, String expectedTitle ){
 
         Assert.assertEquals(driver.getTitle(), expectedTitle);
+        //bazen istenen "Title" ile sayfanın "Title" ı farklı olabiliyor
+        //buna göre değişimler yapabilirsin Test dosyasında
+    }
+
+
+
 
     }
 
-}
+
+
+
+
+
+
