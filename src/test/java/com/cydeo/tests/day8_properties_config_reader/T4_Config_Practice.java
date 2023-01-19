@@ -40,13 +40,14 @@ public class T4_Config_Practice {
        cookies.click();
         Thread.sleep(1000);
         WebElement googleSearchBox = driver.findElement(By.xpath("//input[@name='q']"));
-        googleSearchBox.sendKeys("apple"+ Keys.ENTER);
+        googleSearchBox.sendKeys(ConfigurationReader.getProperty("searchValue")+ Keys.ENTER);
 
 
 
     //4- Verify title:
     //Expected: apple - Google Search
-        String  expectedTitle = "apple - Google'da Ara";
+        String  expectedTitle = ConfigurationReader.getProperty("searchValue")+" - Google'da Ara";
+                                //configuration bölümünde ne yazarsan buradan ona ulaşacak
         String actualTitle = driver.getTitle();
 
         Assert.assertEquals(actualTitle,expectedTitle);
