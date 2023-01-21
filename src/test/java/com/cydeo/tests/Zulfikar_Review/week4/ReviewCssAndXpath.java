@@ -59,7 +59,7 @@ public class ReviewCssAndXpath {
                 We can go between siblings using/preceding or following siblings method
 
                 following-sibling::tagName
-                preceding-sibling::
+                preceding-sibling::tagName
          */
 
 
