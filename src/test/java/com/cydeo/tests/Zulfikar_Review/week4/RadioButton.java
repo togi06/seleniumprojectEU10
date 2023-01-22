@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class RadioButton {
@@ -19,10 +20,25 @@ public class RadioButton {
 
         WebElement bluBtn = driver.findElement(By.id("blue"));
         WebElement redBtn = driver.findElement(By.id("red"));
+        WebElement greenBtn = driver.findElement(By.id("green"));
 
         redBtn.click();
         Thread.sleep(2000);
         bluBtn.click();
+
+        System.out.println(redBtn.isDisplayed());
+        System.out.println(redBtn.isSelected());
+        System.out.println(redBtn.getText());
+        System.out.println(greenBtn.isEnabled());
+
+
+        List<WebElement> btns =driver.findElements(By.xpath("//input[@type='radio']"));
+
+        for (WebElement btn : btns){
+            btn.click();
+            Thread.sleep(1000);
+            System.out.println(btn.isEnabled());
+        }
 
     }
 }

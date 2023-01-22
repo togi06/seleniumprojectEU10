@@ -28,6 +28,10 @@ public class JavaFakerPractice {
 
         System.out.println("faker.bothify(\"###-?#?#-##??\") = " + faker.bothify("###-?#?#-##??"));
 
+        System.out.println("faker.finance().creditCard() = " + faker.finance().creditCard().replace("-",""));
+                                                                                             //"-" yerine boşluk olması için "replace" i kullandık
+
+        System.out.println("faker.chuckNorris().fact() = " + faker.chuckNorris().fact());
 
     }
 }
