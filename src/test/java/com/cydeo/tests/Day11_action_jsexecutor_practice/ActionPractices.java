@@ -46,8 +46,14 @@ public class ActionPractices {
         WebElement homeLink = Driver.getDriver().findElement(By.linkText("Home"));
         actions.moveToElement(homeLink).perform();
 
+    }
 
 
+    @Test
+    public void test2(){
+        Driver.getDriver().get("https://practice.cydeo.com/");
 
     }
+
+
 }
