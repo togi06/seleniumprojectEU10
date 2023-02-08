@@ -27,8 +27,17 @@ public class LibraryLoginPage {
     @FindBy(id = "inputPassword")
     public WebElement inputPassword;
 
-    @FindBy(xpath = "//button[.='Sing in']")
+    @FindBy(xpath = "//button[.='Sign in']")
     public WebElement singInButton;
+
+    @FindBy(xpath = "//div[.='This field is required.']/div")
+    public WebElement fieldRequiredErrorMassage;
+
+    @FindBy(xpath = "//div[.='Please enter a valid email address.']/div")
+    public  WebElement enterValidEmailErrorMassage;
+
+    @FindBy(xpath = "//div[@class=\"mb-4\\\"]/div")
+    public WebElement wrongEmailOrPasswordErrorMassage;
 
 
 
