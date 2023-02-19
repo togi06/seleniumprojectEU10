@@ -29,7 +29,7 @@ public class T3_RadioButton_cont {
         clickAndVerifyRadioButton(driver, "sport", "football");
         clickAndVerifyRadioButton(driver, "color", "yellow");
 
-        driver.quit();
+        //driver.quit();
     }
 
     private  static void  clickAndVerifyRadioButton(WebDriver driver, String  nameAttribute, String idValue){
